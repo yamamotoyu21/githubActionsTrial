@@ -1,10 +1,26 @@
-name: unit-test
+name: Unit Test
 on: [push]
 
 jobs: 
-  build: 
-    name: jest
+  test: 
+    name: Run Jest Tests
     runs-on: ubuntu-latest
+
     steps:
-      - run: npm run jest
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm intall
+
+      - name: Run Jest tests
+        run: npm run jest
+
+      - name: Show jest coverage result
+        run: npm run jest-coverage
       
