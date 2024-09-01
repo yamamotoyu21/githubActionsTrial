@@ -46,13 +46,9 @@ export function calcChange(
 
   // Iterate through each denomination
   for (const denomination of denominations) {
-    // If leftover is greater than or equal to the current denomination
     if (leftover >= denomination) {
-      // Calculate the number of coins/bills needed for this denomination
       let countByDenomination = Math.floor(leftover / denomination);
-      // Add the count to the changes record
       changes[denomination] = countByDenomination;
-      // Update the leftover amount
       leftover -= countByDenomination * denomination;
     }
   }

@@ -1,0 +1,10 @@
+name: Hello, World!
+on: push
+
+jobs: 
+  build: 
+    name: Greeting
+    runs-on: ununtu-latest
+    steps:
+      - run: echo "Hello, World"
+      
